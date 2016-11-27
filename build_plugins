@@ -1,0 +1,14 @@
+#!/bin/bash
+
+#you run this script to build all plugins.
+for f in * ; do
+	if [[ $f =~ ^plugin\. ]]
+	then echo "building $f...";
+	make -C $f
+		for tcplugin in $f/* ; do
+			if [[ $tcplugin =~ \.tcplugin$ ]]
+			then cp $tcplugin ./plugins;
+			fi
+		done
+	fi
+done
