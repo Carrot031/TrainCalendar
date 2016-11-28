@@ -6,8 +6,8 @@
 #include "X11/Xlib.h"
 #include <pango/pangocairo.h>
 #include <fontconfig/fontconfig.h>
-#include "OdangoShooting.h"
-#include "GameSceneMenu.h"
+#include "TrainCalendar.h"
+#include "GameSceneMain.h"
 
 
 int main()
@@ -44,7 +44,7 @@ gboolean gametick_callback(gpointer user_data)
 {
 	if(!game_scene)
 	{
-		next_game_scene = GameSceneMenu_New();
+		next_game_scene = GameSceneMain_New();
 	}
 
 	if(next_game_scene)

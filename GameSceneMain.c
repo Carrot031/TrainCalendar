@@ -27,6 +27,7 @@ GameScene* GameSceneMain_New()
 	GameSceneMain_Field* field = ret->Field;
 
 	/* initialize field */
+	/*
 	field->Akari = Akari_New();
 	field->Akari->Position = (Point) {0,0};
 	field->CleanOdangoTick = 0;
@@ -44,6 +45,7 @@ GameScene* GameSceneMain_New()
 			field->EnemyArray[i] = NULL;
 		}
 	}
+	*/
 	field->Score = 0;
 	field->AttackFlag = false;
 	field->KeyUpFlag = false;
@@ -175,6 +177,7 @@ GameScene* GameSceneMain_GameTick(void* this)
 		}
 	}
 
+	/*
 	if(field->CleanOdangoTick < OdangoCleanInterval){
 		field->CleanOdangoTick++;
 	}
@@ -183,6 +186,7 @@ GameScene* GameSceneMain_GameTick(void* this)
 		GameSceneMain_CleanOdangoArray(this);
 		field->CleanOdangoTick = 0;
 	}
+	*/
 
 	/* move akari */
 	if(field->KeyUpFlag){
@@ -199,6 +203,7 @@ GameScene* GameSceneMain_GameTick(void* this)
 	}
 
 	/* move odango */
+	/*
 	{
 		int i;
 		for(i = 0; i < MaxOdangos; i++){
@@ -208,6 +213,7 @@ GameScene* GameSceneMain_GameTick(void* this)
 			to_move->Position.Y += 0;
 		}
 	}
+	*/
 
 	/* generate odango */
 	/*
@@ -231,6 +237,7 @@ GameScene* GameSceneMain_GameTick(void* this)
 	*/
 
 	/* move enemies */
+	/*
 	{
 		int i;
 		for(i = 0; i < MaxEnemies; i++){
@@ -240,6 +247,7 @@ GameScene* GameSceneMain_GameTick(void* this)
 			e->Position.Y += e->Velocity.Y;
 		}
 	}
+	*/
 
 	/* generate chinatsu */
 	/*
@@ -347,6 +355,7 @@ GameScene* GameSceneMain_GameTick(void* this)
 	}
 
 	/* remove enemies whose HP <= 0 */
+	/*
 	{
 		int i;
 		for(i = 0; i < MaxEnemies; i++){
@@ -358,6 +367,8 @@ GameScene* GameSceneMain_GameTick(void* this)
 			}
 		}
 	}
+	*/
+
 	//GameSceneMain_CleanOdangoArray(this);
 	return NULL;
 }
@@ -406,6 +417,7 @@ void GameSceneMain_Draw(void* this, cairo_t* cr,int width,int height)
 	}
 
 	/* paint enemies */
+	/*
 	{
 		int i;
 		for(i = 0; i < MaxEnemies; i++){
@@ -418,6 +430,7 @@ void GameSceneMain_Draw(void* this, cairo_t* cr,int width,int height)
 			cairo_paint(cr);
 		}
 	}
+	*/
 	/*
 	PangoLayout *layout;
 	PangoFontDescription *desc;
@@ -762,6 +775,7 @@ void GameSceneMain_KeyUp(void* this,GameKeys key)
 	}
 }
 
+/*
 void GameSceneMain_CleanOdangoArray(void* this)
 {
 	GameSceneMain_Field* field = ((GameScene*)this)->Field;
@@ -779,6 +793,8 @@ void GameSceneMain_CleanOdangoArray(void* this)
 		}
 	}
 }
+
+*/
 void GameSceneMain_Dispose(void* this)
 {
 	printf("DISPOSED");
