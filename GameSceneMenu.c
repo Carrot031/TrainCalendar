@@ -31,12 +31,14 @@ GameScene* GameSceneMenu_New()
 	field->SelectionIndex = 0;
 
 	/* load images */
+	/*
 	field->logo_png = cairo_image_surface_create_from_png
 	("logo.png");
 	if(cairo_surface_status(field->logo_png) != CAIRO_STATUS_SUCCESS){
 		perror("Couldn't load logo image");
 		exit(EXIT_FAILURE);
 	}
+	*/
 
 	/* set flag */
 	field->StartFlag = false;
@@ -69,6 +71,7 @@ void GameSceneMenu_Draw(void* this, cairo_t* cr,int width,int height)
 	cairo_fill(cr);
 
 	/* paint logo */
+	/*
 	cairo_save(cr);
 	int logo_width = cairo_image_surface_get_width(field->logo_png)
 	* 0.4 * ((double)width)/400;
@@ -79,6 +82,7 @@ void GameSceneMenu_Draw(void* this, cairo_t* cr,int width,int height)
 	cairo_paint(cr);
 	cairo_restore(cr);
 	cairo_identity_matrix(cr);
+	*/
 
 	PangoLayout *layout;
 	PangoFontDescription *desc;

@@ -61,6 +61,7 @@ GameScene* GameSceneMain_New()
 
 
 	/* load images */
+	/*
 	field->akari_png = cairo_image_surface_create_from_png
 	("akari.png");
 	if(cairo_surface_status(field->akari_png) != CAIRO_STATUS_SUCCESS){
@@ -81,7 +82,7 @@ GameScene* GameSceneMain_New()
 		perror("Couldn't load crying akarin image");
 		exit(EXIT_FAILURE);
 	}
-
+	*/
 	/* load plugins */
 	field->NPlugins = 0;
 	field->PluginHandleArray = malloc(sizeof(void*) * MaxPlugins);
@@ -209,6 +210,7 @@ GameScene* GameSceneMain_GameTick(void* this)
 	}
 
 	/* generate odango */
+	/*
 	if(field->AttackFlag && 
 	field->NTickAttackCount >= NTickAttackInterval){
 		Odango* to_add = Odango_New();
@@ -226,6 +228,7 @@ GameScene* GameSceneMain_GameTick(void* this)
 			}
 		}
 	}
+	*/
 
 	/* move enemies */
 	{
@@ -256,6 +259,7 @@ GameScene* GameSceneMain_GameTick(void* this)
 	*/
 
 	/* Colision Check */
+	/*
 	Point p1[4];
 	p1[0].X = field->Akari->Position.X;
 	p1[0].Y = field->Akari->Position.Y;
@@ -269,7 +273,10 @@ GameScene* GameSceneMain_GameTick(void* this)
 				field->akari_png)*0.4;
 	p1[3].X = p1[0].X;
 	p1[3].Y = p1[2].Y;
+	*/
+	
 	{ /* akari and enemies */
+		/*
 		Point p2[4];
 
 		int i;
@@ -294,8 +301,11 @@ GameScene* GameSceneMain_GameTick(void* this)
 				e->HP -= field->Akari->TouchDamage;
 			}
 		}
+		*/
 	}
+
 	{ /* odango and enemies */
+	/*
 		Point podango[4];
 		Point penemy[4];
 		int io,ie;
@@ -333,6 +343,7 @@ GameScene* GameSceneMain_GameTick(void* this)
 				}
 			}
 		}
+		*/
 	}
 
 	/* remove enemies whose HP <= 0 */
@@ -368,15 +379,18 @@ void GameSceneMain_Draw(void* this, cairo_t* cr,int width,int height)
 	cairo_save(cr);
 	/*int akari_width = cairo_image_surface_get_width(field->akari_png)
 	* 0.4 * ((double)width)/400;*/
+	/*
 	cairo_translate(cr,field->Akari->Position.X * width / 400,field->Akari->Position.Y * width / 400);
 	cairo_scale(cr,0.4 * ((double)width)/400,0.4 * ((double)width)/400);
 	cairo_set_source_surface(cr,field->akari_png,0,0);
 	cairo_paint(cr);
 	cairo_restore(cr);
 	cairo_identity_matrix(cr);
+	*/
 
 	/* paint odango */
 	{
+		/*
 		int i;
 		for(i = 0; i < MaxOdangos; i++){
 			Odango* o = field->OdangoArray[i];
@@ -388,6 +402,7 @@ void GameSceneMain_Draw(void* this, cairo_t* cr,int width,int height)
 			cairo_set_source_surface(cr,field->odango_png,0,0);
 			cairo_paint(cr);
 		}
+		*/
 	}
 
 	/* paint enemies */

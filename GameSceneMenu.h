@@ -23,7 +23,7 @@ void GameSceneMenu_MenuItem_Exit_Behavior(void*);
 /* field*/
 typedef struct{
 	SList* Menu;
-	cairo_surface_t* logo_png;
+	//cairo_surface_t* logo_png;
 	PangoFontDescription* pfd_menu;
 	bool StartFlag;
 	int SelectionIndex;

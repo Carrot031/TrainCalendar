@@ -43,9 +43,11 @@ typedef enum{
 typedef struct{
 	/* SList* Menu; */
 	/* images */
+	/*
 	cairo_surface_t* akari_png;
 	cairo_surface_t* odango_png;
 	cairo_surface_t* crying_akari_png;
+	*/
 
 	PangoFontDescription* pfd_menu;
 	Akari* Akari;
