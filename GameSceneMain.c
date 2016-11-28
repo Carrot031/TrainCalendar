@@ -2,10 +2,7 @@
 #include "stdlib.h"
 #include "GameScene.h"
 #include "GameSceneMain.h"
-#include "Gamboh.h"
-#include "Chinatsu.h"
 #include "Random.h"
-#include "Colision.h"
 #include "pango/pango.h"
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -143,10 +140,12 @@ GameScene* GameSceneMain_GameTick(void* this)
 {
 	GameScene* ptr = this;
 	GameSceneMain_Field* field = ptr->Field;
-	const int speed = 2;
+	//const int speed = 2;
 
+	/*
 	if(field->Akari->HP <= 0){
 	}
+	*/
 
 	/* count ntick */
 	if(field->NTickAttackCount < NTickAttackInterval){
@@ -189,6 +188,7 @@ GameScene* GameSceneMain_GameTick(void* this)
 	*/
 
 	/* move akari */
+	/*
 	if(field->KeyUpFlag){
 		field->Akari->Position.Y -= speed;
 	}
@@ -201,6 +201,7 @@ GameScene* GameSceneMain_GameTick(void* this)
 	if(field->KeyRightFlag){
 		field->Akari->Position.X += speed;
 	}
+	*/
 
 	/* move odango */
 	/*
@@ -800,8 +801,8 @@ void GameSceneMain_Dispose(void* this)
 	printf("DISPOSED");
 	fflush(stdout);
 	GameScene* ptr = this;
-	GameSceneMain_Field* field = ptr->Field;
-	free(field->EnemyArray);
+	//GameSceneMain_Field* field = ptr->Field;
+	//free(field->EnemyArray);
 	free(ptr->Field);
 	free(ptr);
 }

@@ -4,9 +4,6 @@
 #include "SList.h"
 #include "stdbool.h"
 #include "Point.h"
-#include "Akari.h"
-#include "Enemy.h"
-#include "Odango.h"
 #include "TCPlugin.h"
 #include "Config.h"
 #include <dirent.h>
@@ -49,11 +46,13 @@ typedef struct{
 	cairo_surface_t* crying_akari_png;
 	*/
 
+	/*
 	PangoFontDescription* pfd_menu;
 	Akari* Akari;
 	int CleanOdangoTick;
 	Odango** OdangoArray;
 	Enemy** EnemyArray;
+	*/
 	/* status */
 	int Score;
 	bool AttackFlag;
